@@ -4,8 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Server - La Barraca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <p>¡Hola Mundo!</p>
+<body class="bg-light text-body">
+    <header class="bg-white border-bottom">
+    <div class="container py-3 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+            <a class="navbar-brand me-2 fw-bold" href="https://alfajoreslabarraca.com.ar/">
+                <img src="https://alfajoreslabarraca.com.ar/img/logo.png" alt="Logo" width="55px" class="me-2">
+            </a>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center">
+                <span class="status-dot" id="status-dot-general"></span>
+                <small class="fw-semibold" id="status-text-general"></small>
+                <small class="text-muted ms-3" id="status-info-general"></small>
+            </div>
+        </div>
+    </div>
+    </header>
+    <div class="container mt-4">
+        <div id="incident-banner" class="alert alert-danger incident-banner d-none" role="alert">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <h6 class="mb-1"><i class="bi bi-x-circle-fill me-2"></i></h6>
+                    <small></small>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-light" id="dismiss-banner"><i class="bi bi-x"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main -->
+    <main class="container my-4">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-8">
+                <div class="d-flex align-items-center justify-content-between mb-3 text-center page-head">
+                    <h2 class="mb-0">Status Page</h2>
+                    <h5 class="mb-0">alfajoreslabarraca.com.ar</h5>
+                </div>
+                <section class="mb-3">
+                    <div class="row g-3" id="status-section">
+                        <noscript class="m-0"><p class="text-center text-danger">You need to enable JavaScript to run this app.</p></noscript>
+                    </div>
+                </section>
+                <section class="mb-3 d-flex justify-content-center" style="flex-direction: column;">
+                    <button
+                        class="btn btn-outline-primary d-flex align-items-center gap-2 mb-2"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#detallesContent"
+                        aria-expanded="false"
+                        aria-controls="detallesContent"
+                    >
+                        <i class="bi bi-chevron-down"></i>
+                        Ver detalles
+                    </button>
+                    <div id="detallesContent" class="collapse">
+                        <div class="log-filters mb-3">
+                            <label class="log-check info">
+                                <input type="checkbox" value="info" name="info" checked onchange="updateLogView()">
+                                INFO
+                            </label>
+                            <label class="log-check success">
+                                <input type="checkbox" value="success" name="success" checked onchange="updateLogView()">
+                                SUCCESS
+                            </label>
+                            <label class="log-check warning">
+                                <input type="checkbox" value="warning" name="warning" checked onchange="updateLogView()">
+                                WARNING
+                            </label>
+                            <label class="log-check error">
+                                <input type="checkbox" value="error" name="warning" checked onchange="updateLogView()">
+                                ERROR
+                            </label>
+                            <label class="log-check system">
+                                <input type="checkbox" value="system" name="system" checked onchange="updateLogView()">
+                                SYSTEM
+                            </label>
+                        </div>
+                        <div id="consoleText"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="py-3 text-center text-muted border-top bg-white">
+        © 2025, FranRazzitte. Todos los derechos reservados.
+    </footer>
+    <div class="modal fade" id="subscribeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Modal</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-msg" class="mt-2 small"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+:root{
+    --success: #198754;
+    --warning: #db9d00;
+    --danger:  #dc3545;
+    --muted: #6c757d;
+    --system: #0d6efd;
+}
+
+html,body{height: 100%;margin: 0;}
+body{display: flex;flex-direction: column;min-height: 100vh;}
+main{flex: 1;}
+
+.status-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.status-up{background:var(--success)}
+.status-degraded{background:var(--warning)}
+.status-down{background:var(--danger)}
+.status-muted{background:var(--muted)}
+
+.component-card{transition:box-shadow .16s ease}
+.component-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.06)}
+
+.incident-banner{border-left:4px solid var(--danger)}
+
+.sparkline{height:36px;width:120px}
+
+.log-filters{display: flex;gap: .5rem;flex-wrap: wrap;}
+
+.log-check{border: 1px solid #ccc;border-radius: 20px;padding: 4px 10px;font-size: 12px;cursor: pointer;user-select: none;}
+
+.log-check input{display: none;}
+
+.log-check:has(input:checked){background: #f0f0f0;font-weight: 600;}
+
+.log-check.success { color: var(--success); }
+.log-check.warning { color: var(--warning); }
+.log-check.error   { color: var(--danger); }
+.log-check.system  { color:  var(--system);}
+
+@media (max-width:767px){
+    .right-col{order:-1}
+    #status-info-general{display:none;}
+    .page-head{display: block !important;}
+    .componentCard{min-width:230px;}
+}

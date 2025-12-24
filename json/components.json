@@ -1,0 +1,61 @@
+{
+    "service": [
+        {
+            "name": "alfajoreslabarraca.com.ar",
+            "domain": "https://alfajoreslabarraca.com.ar",
+            "groups": [
+                {
+                    "id": "WebPage",
+                    "components": [
+                        {
+                            "id": "nosotros",
+                            "name": "Sobre Nosotros",
+                            "url": "https://alfajoreslabarraca.com.ar/nosotros"
+                        },
+                        {
+                            "id": "preguntas",
+                            "name": "FAQ",
+                            "url": "https://alfajoreslabarraca.com.ar/preguntas"
+                        },
+                        {
+                            "id": "productos",
+                            "name": "Productos",
+                            "url": "https://alfajoreslabarraca.com.ar/productos"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "bd.alfajoreslabarraca.com.ar",
+            "domain": "https://bd.alfajoreslabarraca.com.ar",
+            "groups": [
+                {
+                    "id": "Scripts",
+                    "components": [
+                        {
+                            "id": "alfajores",
+                            "name": "alfajores.js",
+                            "url": "https://bd.alfajoreslabarraca.com.ar/js/alfajores.js"
+                        },
+                        {
+                            "id": "categorias",
+                            "name": "categorias.js",
+                            "url": "https://bd.alfajoreslabarraca.com.ar/js/categorias.js"
+                        },
+                        {
+                            "id": "carousel",
+                            "name": "carousel.js",
+                            "url": "https://bd.alfajoreslabarraca.com.ar/js/carousel.js"
+                        },
+                        {
+                            "id": "eventos",
+                            "name": "eventos.js",
+                            "url": "https://bd.alfajoreslabarraca.com.ar/js/eventos.js"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
